@@ -13,7 +13,6 @@
     var i = 0
     function next() {
       let carouselItems = document.getElementsByClassName('carousel-item');
-      console.log('function next being invoked');
       carouselItems[0].className = "carousel-item"
       carouselItems[1].className = "carousel-item"
       carouselItems[2].className = "carousel-item"
@@ -21,7 +20,6 @@
       carouselItems[i % 3].className = "carousel-item active"
     }
     function prev() {
-      console.log('function prev being invoked')
       let carouselItems = document.getElementsByClassName('carousel-item');
       carouselItems[0].className = "carousel-item"
       carouselItems[1].className = "carousel-item"
@@ -30,16 +28,27 @@
       if(i<0)i=2
       carouselItems[i % 3].className = "carousel-item active"
     }
+    var lambda = true;
+    function toggle(){
+    if (lambda){
+        document.querySelector('#navbarSupportedContent').className = "collapse navbar-collapse"
+
+    }else{
+        document.querySelector('#navbarSupportedContent').className = "collapse navbar-collapse show"
+
+    }
+    lambda = !lambda
+
+}
   </script>
   <nav class="navbar navbar-expand-sm bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">CUBERA</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler" type="button" onclick="toggle()">
+        <span class="navbar-toggler-icon "></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 show">
         </ul>
         <a class="nav-item nav-link px-2" href="#">Home</a>
         <a class="nav-item nav-link px-2" href="#">About Us</a>
@@ -54,13 +63,13 @@
     <div id="carouselExample" class="carousel slide">
       <div class="carousel-inner">
         <div class="carousel-item">
-          <img src="vite.svg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-          <img src="javascript.svg" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
           <img src="banner copy 1.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="banner copy 2.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="banner copy 3.png" class="d-block w-100" alt="...">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" id="carouselExamplePrev" onclick="prev()">
@@ -72,9 +81,31 @@
         <span class="visually-hidden">Next</span>
       </button>
     </div>
+    
   </div>
-
-  <div id="app"></div>
+  <div class="container text-center">
+    <div class="row align-items-center">
+      <div class="col-9 text-start">
+        <p>Create targeted campaigns at scale with Cubera’s zero party data. Customize your campaign requirements and boost your ROAS with our Integrated Identity profiles capable of cross-device attribution.</p>
+        <button type="button" class="btn btn-primary btn-shadow">Learn More</button>
+      </div>
+      <div class="col">
+        <img src="Asset 1 1.png" alt="" srcset="">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+      <p class="col-md-4 mb-0 text-muted"></p>
+  
+      <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+         CUBERA LOGO
+      </a>
+  
+      <ul class="nav col-md-4 justify-content-end">
+      </ul>
+    </footer>
+  </div>
 </body>
 <script type="module" src="/main.js"></script>
 
